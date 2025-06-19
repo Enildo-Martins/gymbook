@@ -1,9 +1,13 @@
-from models import Usuario, Reserva
+from models import Usuario
 
-def simular_reserva(usuario_nome, horario):
-    usuario = Usuario(usuario_nome)
-    reserva = Reserva(usuario, horario)
-    print(f"Reserva feita por {usuario.nome} para o horário {reserva.horario}")
+def tela_login():
+    username = input("Digite seu nome de usuário: ")
+    senha = input("Digite sua senha: ")
+    usuario = Usuario(username, senha)
+    if usuario.autenticar():
+        print("Login bem-sucedido!")
+    else:
+        print("Usuário ou senha incorretos.")
 
 if __name__ == "__main__":
-    simular_reserva("João", "18:00")
+    tela_login()
