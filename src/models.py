@@ -1,8 +1,9 @@
 class Usuario:
-    def __init__(self, nome):
-        self.nome = nome
+    usuarios = {"user1": "1234", "user2": "abcd"}
 
-class Reserva:
-    def __init__(self, usuario, horario):
-        self.usuario = usuario
-        self.horario = horario
+    def __init__(self, nome, senha):
+        self.nome = nome
+        self.senha = senha
+
+    def autenticar(self):
+        return Usuario.usuarios.get(self.nome) == self.senha
