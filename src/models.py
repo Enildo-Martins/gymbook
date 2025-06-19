@@ -7,3 +7,4 @@ class Usuario:
 
     def autenticar(self):
         return Usuario.usuarios.get(self.nome) == self.senha
+
